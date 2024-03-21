@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Posts</title>
+    <style>
+        /* Styling untuk membuat form terlihat lebih menarik */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<form action ="/home/add" method="post">
+    <label for="title">title:</label>
+    <input type="text"  id = "title" name="title" placeholder="title" required>
+
+    <label for="content">Content:</label>
+    <input type="text"  id="content" name="content" placeholder="content" required >
+
+    <label for="imageUrl">imageUrl:</label>
+    <input type="text"  id = "imageUrl"name="imageUrl" placeholder="Url....">
+
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
