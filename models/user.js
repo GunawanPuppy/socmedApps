@@ -21,16 +21,25 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       type:DataTypes.STRING,
       allowNull : false,
+      unique : true,
       validate :{
-        notEmpty : true,
-        min : 5
+        notEmpty :{
+          msg: "username harus ada bro"
+        },
+        len : {
+          args: [5,],
+          msg : "Username minimal harus memiliki 5 karakter"
+        }
       }
        },
     email: {
       type:DataTypes.STRING,
       allowNull : false,
+      unique: true,
       validate : {
-        notEmpty : true
+        notEmpty : {
+          msg: "email is required"
+        }
       }
     },
     password: {
@@ -38,7 +47,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull : false,
       validate : {
         notEmpty : true,
-        min : 8
+        len : {
+          args : [8,],
+          msg: "Password minimal 8 huruf"
+        }
       }
     },
     role: {

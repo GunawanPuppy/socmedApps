@@ -70,27 +70,60 @@ class Controller {
             res.send(error)
         }
     }
+    // const{sort} = req.query
+    // let options = {}
+    // if(sort === "UserId"){
+    //     options.order = [["UserId", 'DESC']]
+    // }
     
-    static async home(req,res){
+    // static async home(req,res){
+    //     try {
+    // const{search} = req.query
+    // let options = {}
+    // if(search === "UserId"){
+    //     options.where = [["UserId", 'DESC']]
+    // }
+
+    //             let data = await Post.findAll({
+    //                 include : {
+    //                 model : User,
+    //                 include : Comment
+    //             },
+    //             })
+    //         console.log(data, "ini data di homeee");
+    //             res.render('home', {data})
+    //         } catch (error) {
+    //             console.log(error);
+    //             res.send(error)
+    //         }
+    // }
+    static async home(req, res) {
         try {
-            // const{sort} = req.query
-            // let options = {}
-            // if(sort === "UserId"){
-            //     options.order = [["UserId", 'DESC']]
-            // }
-            
-                let data = await Post.findAll({
-                    include : {
-                    model : User,
-                    include : Comment
-                },
-                })
-            console.log(data, "ini data di homeee");
-                res.render('home', {data})
-            } catch (error) {
-                console.log(error);
-                res.send(error)
+            const {search} = req.query;
+            console.log(req.query);
+            let options = {};
+
+            if(search){
+                options.where = {
+                    content : {
+                        [Op.iLike]: `%${search}%`
+                    }
+                }
             }
+            let data = await Post.findAll({
+                include: {
+                    model: User,
+                    include: Comment
+                },
+                ...options //tambahin fitur search
+            });
+    
+            console.log(data, "ini data di homeee");
+            res.render('home', { data });
+        } catch (error) {
+            console.log(error);
+            res.send(error);
+        }
     }
 
     static async seeProfile(req,res){

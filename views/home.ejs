@@ -10,7 +10,10 @@
 </head>
 <body>
   <h1>Home</h1>
-  <a href= "/?sort=UserId" style="text-decoration: none;"> Sort By UserId</a>
+  <form action="/home" method="get">
+    <input type="text" name="search">
+    <input type="submit" value ="SEARCH">
+  </form>
 
     <% data.forEach(el => { %>
         <h4>User : <%= el.User.username %></h4>
