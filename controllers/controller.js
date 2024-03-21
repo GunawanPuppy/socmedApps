@@ -1,5 +1,6 @@
 const {Post,Tag,TagPost,Comment,User,Profile} = require('../models/index')
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const {Op} = require('sequelize')
 
 
 
@@ -69,21 +70,27 @@ class Controller {
             res.send(error)
         }
     }
-
+    
     static async home(req,res){
         try {
-            let data = await Post.findAll({
-                include : {
-                model : User,
-                include : Comment
-             }
-            })
-           console.log(data, "ini data di homeee");
-            res.render('home', {data})
-        } catch (error) {
-            console.log(error);
-            res.send(error)
-        }
+            // const{sort} = req.query
+            // let options = {}
+            // if(sort === "UserId"){
+            //     options.order = [["UserId", 'DESC']]
+            // }
+            
+                let data = await Post.findAll({
+                    include : {
+                    model : User,
+                    include : Comment
+                },
+                })
+            console.log(data, "ini data di homeee");
+                res.render('home', {data})
+            } catch (error) {
+                console.log(error);
+                res.send(error)
+            }
     }
 
     static async seeProfile(req,res){
@@ -153,9 +160,22 @@ class Controller {
             res.send(error)
         }
     }
-    
 
-    
+    static async deletePost (req,res){
+        try {
+            const {id} = req.params
+            console.log(req.params);
+            let data = await Post.destroy({
+                where:{
+                    id
+                }
+            })
+            console.log(data, "ini delete");
+            res.redirect(`/home`)
+        } catch (error) {
+            res.send(error)
+        }
+    }
 }
 
 module.exports = Controller

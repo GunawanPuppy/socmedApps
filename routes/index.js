@@ -33,6 +33,8 @@ router.get('/home/add', Controller.renderAdd)
 router.post('/home/add',Controller.handlerAdd)
 router.get('/home/edit/:id',Controller.renderEdit)
 router.post('/home/edit/:id',Controller.handlerEdit)
+router.get('/home/delete/:id', Controller.deletePost)
+
 
 
 
