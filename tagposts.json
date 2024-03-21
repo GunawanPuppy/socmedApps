@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Photos from Expert",
+        "TagId": 1,
+        "PostId": 1
+    },
+    {
+        "name": "Gallery",
+        "TagId": 2,
+        "PostId": 2
+    }
+]

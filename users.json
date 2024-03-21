@@ -1,0 +1,26 @@
+[
+    {
+        "username": "Ramzes66",
+        "email": "phoenix@gmail.dom",
+        "password": "aiueo8990",
+        "role": "user"
+    },
+    {
+        "username": "photography_expert",
+        "email": "photo@turbo.dom",
+        "password": "8990iuoue",
+        "role": "user"
+    },
+    {
+        "username": "namaewa_kyoushi89",
+        "email": "namaewa@rocketmail.dom",
+        "password": "namaewa8990",
+        "role": "user"
+    },
+    {
+        "username": "ilikearchitecture",
+        "email": "cekrek@ymail.dom",
+        "password": "cekrekdikit89",
+        "role": "user"
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "UserId": 1,
+        "PostId": 2,
+        "content": "Photography"
+    },
+    {
+        "UserId": 2,
+        "PostId": 1,
+        "content": "Architecture"
+    }
+]
