@@ -12,7 +12,7 @@
   <h1>Home</h1>
   <form action="/home" method="get">
     <input type="text" name="search">
-    <input type="submit" value ="SEARCH">
+    <input type="submit" value ="Search By Content">
   </form>
 
     <% data.forEach(el => { %>
@@ -21,13 +21,13 @@
             <img src="<%=el.imageUrl%>" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><%= el.title %></h5>
-              <h6> Content : <%= el.content %></h6>
+              <h6> Content : <%= formatContent(el.content) %></h6>
                 <% el.User.Comments.forEach(element => { %>
                     <label>Comment :</label>
                    <p> <%= element.text %></p>
                 <% }) %>
               <a href="/home/profile/<%= el.User.id %>" class="btn btn-primary">Profile</a>
-              <a href="/home/add" style="background-color: aquamarine; color: black"  class="btn btn-primary">Add New Post</a>
+              <a href="/home/add/" style="background-color: aquamarine; color: black"  class="btn btn-primary">Add New Post</a>
               <a href="/home/delete/<%= el.id %>" style="background-color: red;" class="btn btn-primary" >Delete</a>
               <a href= "/home/edit/<%= el.id %>" style = "background-color: yellow; color: black" class=" btn btn-primary"> Edit</a>
             </div>

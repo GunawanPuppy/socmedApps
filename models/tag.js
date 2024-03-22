@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Tag.belongsToMany(models.Post,{through : 'TagPosts'},{foreignKey:'TagId'})
     }
+
+
   }
   Tag.init({
     name: DataTypes.STRING
