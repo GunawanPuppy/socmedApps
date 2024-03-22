@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Profile.belongsTo(models.User,{foreignKey:'UserId'})
     }
+    static seeProfile(id){
+     let data = Profile.findByPk(id)
+     return data
+    }
   }
   Profile.init({
     phone: DataTypes.STRING,

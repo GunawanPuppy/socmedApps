@@ -12,7 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    let data = JSON.parse(await fs.readFile('./users.json','utf-8'))
+    let data = JSON.parse(await fs.readFile('./data/users.json','utf-8'))
     data = data.map(el=>{
      delete el.id
      el.createdAt = el.updatedAt = new Date()

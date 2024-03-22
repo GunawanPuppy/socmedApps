@@ -16,9 +16,32 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Post.init({
-    title: DataTypes.STRING,
-    content: DataTypes.STRING,
-    imageUrl: DataTypes.STRING
+    title: {
+      type: DataTypes.STRING,
+      allowNull : false,
+      validate : {
+        notEmpty : true,
+        notNull : true,
+       
+      }
+    },
+    content: {
+      type: DataTypes.STRING,
+      allowNull : false,
+      validate : {
+        notEmpty : true,
+        notNull : true,
+      }
+    },
+    imageUrl: {
+      type: DataTypes.STRING,
+      allowNull : false,
+      validate : {
+        notEmpty : true,
+        notNull : true,
+        max : 255
+      }
+    }
   }, {
     sequelize,
     modelName: 'Post',
