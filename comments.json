@@ -1,12 +1,22 @@
 [
     {
-        "UserId": 1,
+        "UserId": 3,
+        "PostId": 1,
+        "text": "This one looks beautiful!"
+    },
+    {
+        "UserId": 4,
         "PostId": 2,
-        "content": "Photography"
+        "text": "Gorgeous ^^"
     },
     {
         "UserId": 2,
-        "PostId": 1,
-        "content": "Architecture"
+        "PostId": 3,
+        "text": "Great angel from the maestro!"
+    },
+    {
+        "UserId": 1,
+        "PostId": 4,
+        "text": "This one sparks joy!!!"
     }
 ]
